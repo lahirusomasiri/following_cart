@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "842342897648",
+    "project_id": "followingcart",
+    "storage_bucket": "followingcart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842342897648:android:fd586e356957b6d754ef35",
+        "android_client_info": {
+          "package_name": "com.example.followingcartv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842342897648-n7k2ucirboe9b7h0nicanh9r1qq9210f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPxds5phtp0V4M-5aFioUoW3Y94aamsME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842342897648-n7k2ucirboe9b7h0nicanh9r1qq9210f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
