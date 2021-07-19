@@ -26,6 +26,8 @@ import androidx.core.app.NotificationCompat;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+//test
+
 public class LocationService extends Service implements LocationListener {
     public static final String CHANNEL_ID = "ForegroundServiceChannel";
     FirebaseDatabase database = FirebaseDatabase.getInstance();
