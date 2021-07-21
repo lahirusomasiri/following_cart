@@ -12,9 +12,9 @@
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
         android:fontFamily="cursive"
-        android:text="Welcome"
+        android:text="@string/welcome"
         android:textColor="@color/white"
-        android:textSize="70dp"
+        android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
@@ -27,10 +27,10 @@
         android:layout_width="351dp"
         android:layout_height="44dp"
         android:fontFamily="cursive"
-        android:text="Shopping with us in a new way"
+        android:text="@string/shopping_with_us_in_a_new_way"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -51,9 +51,9 @@
         android:layout_marginRight="16dp"
         android:background="@drawable/button"
         android:fontFamily="monospace"
-        android:text="Begin"
-        android:textSize="20dp"
-        app:backgroundTint="#153951"
+        android:text="@string/begin"
+        android:textSize="20sp"
+        app:backgroundTint="?android:attr/textColorHighlightInverse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
@@ -78,7 +78,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/cart"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/todo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

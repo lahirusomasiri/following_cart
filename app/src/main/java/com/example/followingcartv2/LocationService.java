@@ -123,10 +123,4 @@ public class LocationService extends Service implements LocationListener {
     public void onProviderDisabled(@NonNull String provider) {
 
     }
-
-//    @Override
-//    public void onLocationChanged(@NonNull Location location) {
-//        Log.d("latitude", String.valueOf(location.getLatitude()));
-//        Log.d("latitude", String.valueOf(location.getLongitude()));
-//    }
 }

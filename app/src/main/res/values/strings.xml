@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Following CartV2</string>
+    <string name="logout">LogOut</string>
+    <string name="connect_gps">CONNECT GPS</string>
+    <string name="disconnect_gps">DISCONNECT GPS</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="welcome">Welcome</string>
+    <string name="shopping_with_us_in_a_new_way">Shopping with us in a new way</string>
+    <string name="begin">Begin</string>
+    <string name="todo">TODO</string>
+    <string name="shop_id">Shop ID</string>
+    <string name="enter_shop_id">Enter Shop Id</string>
+    <string name="cart_id">Cart ID</string>
+    <string name="enter_cart_id">Enter Cart Id</string>
+    <string name="login">LogIn</string>
 </resources>

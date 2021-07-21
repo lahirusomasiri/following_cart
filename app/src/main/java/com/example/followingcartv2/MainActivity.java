@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //getPermission(); bnvncn
+        //getPermission();
 
 
     }
@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
 
-//                break;
+               // break;
             case 120:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                     checkGps();
@@ -263,8 +263,6 @@ public class MainActivity extends AppCompatActivity {
                             break;
                     }
                 }
-
-
             }
         });
     }
