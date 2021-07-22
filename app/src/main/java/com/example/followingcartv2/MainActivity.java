@@ -63,34 +63,6 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase ;
     DatabaseReference databaseReference ;
     ValueEventListener valueEventListener2;
-   // DatabaseReference database = firebaseDatabase.getReference(shopId+"/carts/"+cartId+"/Longitude");
-
-/*
-    final ValueEventListener valueEventListener = new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-            if (dataSnapshot.getValue(String.class) != null) {
-                String key = dataSnapshot.getKey();
-                if (key.equals("Latitude")) {
-                    String first = dataSnapshot.getValue(String.class);
-                    textView.setText(first);
-                }
-                if (key.equals("Longitude")) {
-                    String second = dataSnapshot.getValue(String.class);
-                    textView2.setText(second);
-                }
-            }
-        }
-
-
-        @Override
-        public void onCancelled(@NonNull DatabaseError error) {
-
-        }
-    };
-
- */
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         shopId = pref.getString("shopId", null);
         cartId = pref.getString("cartId", null);
         bluetoothId = pref.getString("bluetoothId", null);
-        //set = (Button) findViewById(R.id.set);
+
         logOut = (Button) findViewById(R.id.logout);
         connect = (Button) findViewById(R.id.connect);
         disconnect = (Button) findViewById(R.id.disconnect);
@@ -112,13 +84,6 @@ public class MainActivity extends AppCompatActivity {
         locationRequest = new LocationRequest().setFastestInterval(1500).setInterval(2000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         builder = new LocationSettingsRequest.Builder().addLocationRequest(locationRequest);
 
-//test
-        // BA = BluetoothAdapter.getDefaultAdapter();
-        //a = (TextView) findViewById(R.id.a);
-        //b = (TextView) findViewById(R.id.b);
-        //show = (Button) findViewById(R.id.show);
-
-
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,16 +93,17 @@ public class MainActivity extends AppCompatActivity {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //connect();
                 startService();
+                Toast.makeText(getApplicationContext(), "GPS Service is Starts...", Toast.LENGTH_LONG).show();
             }
         });
         disconnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 stopService();
-
-                //disconnect();
+                Toast.makeText(getApplicationContext(), "GPS Service is Stopped...", Toast.LENGTH_LONG).show();
+//                textView.setText("0");
+//                textView2.setText("0");
             }
         });
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -160,14 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        //getPermission();
-
-
     }
-
-    // new
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

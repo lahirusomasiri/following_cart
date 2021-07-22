@@ -52,11 +52,10 @@ public class LocationService extends Service implements LocationListener {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, (float) 0.25, this);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, (float) 0.5, this);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         shopId = pref.getString("shopId", null);
         cartId = pref.getString("cartId", null);
-
 
         super.onCreate();
     }
