@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 stopService();
-                Toast.makeText(getApplicationContext(), "GPS Service is Stopped...", Toast.LENGTH_LONG).show();
 //                textView.setText("0");
 //                textView2.setText("0");
             }
@@ -171,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
     public void stopService() {
         //Intent serviceIntent = new Intent(this, LocationService.class);
         stopService(serviceIntent);
+        Toast.makeText(getApplicationContext(), "GPS Service is Stopped...", Toast.LENGTH_LONG).show();
     }
 
 
