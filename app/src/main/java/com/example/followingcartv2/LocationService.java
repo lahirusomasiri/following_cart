@@ -26,8 +26,6 @@ import androidx.core.app.NotificationCompat;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-//test
-
 public class LocationService extends Service implements LocationListener {
     public static final String CHANNEL_ID = "ForegroundServiceChannel";
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -52,7 +50,7 @@ public class LocationService extends Service implements LocationListener {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, (float) 0.5, this);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, (float) 0.25, this);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         shopId = pref.getString("shopId", null);
         cartId = pref.getString("cartId", null);
@@ -101,9 +99,16 @@ public class LocationService extends Service implements LocationListener {
     @Override
     public void onLocationChanged(@NonNull Location location) {
         myRef = database.getReference(shopId + "/carts/" + cartId + "/Longitude");
-        myRef.setValue(location.getLongitude());
+        double longi = location.getLongitude();
+
+        myRef.setValue(String.format("%.4f",longi));
+
         myRef = database.getReference(shopId + "/carts/" + cartId + "/Latitude");
-        myRef.setValue(location.getLatitude());
+        double lat = location.getLatitude();
+
+        myRef.setValue(String.format("%.4f",lat));
+
+
         Log.d("latitude", String.valueOf(location.getLatitude()));
         Log.d("Longitude", String.valueOf(location.getLongitude()));
     }

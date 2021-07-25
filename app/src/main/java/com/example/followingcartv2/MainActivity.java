@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startService();
-                Toast.makeText(getApplicationContext(), "GPS Service is Starts...", Toast.LENGTH_LONG).show();
             }
         });
         disconnect.setOnClickListener(new View.OnClickListener() {
@@ -207,6 +206,9 @@ public class MainActivity extends AppCompatActivity {
                     if (response.getLocationSettingsStates().isGpsPresent()){
                         Toast.makeText(getApplicationContext(), "already on", Toast.LENGTH_LONG).show();
                         startService(serviceIntent);
+
+                        Toast.makeText(getApplicationContext(), "GPS Service is Starts...", Toast.LENGTH_LONG).show();
+
                     }
                 } catch (ApiException e) {
                     switch (e.getStatusCode()) {
