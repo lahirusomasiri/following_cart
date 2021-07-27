@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         textView2 = (TextView)findViewById(R.id.second);
         serviceIntent = new Intent(this, LocationService.class);
 
-        locationRequest = new LocationRequest().setFastestInterval(1500).setInterval(2000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest = new LocationRequest().setFastestInterval(1500).setInterval(3000).setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         builder = new LocationSettingsRequest.Builder().addLocationRequest(locationRequest);
 
         logOut.setOnClickListener(new View.OnClickListener() {

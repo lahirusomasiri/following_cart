@@ -50,7 +50,7 @@ public class LocationService extends Service implements LocationListener {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, (float) 0.25, this);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, (float) 0.5, this);
         pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         shopId = pref.getString("shopId", null);
         cartId = pref.getString("cartId", null);
@@ -99,14 +99,16 @@ public class LocationService extends Service implements LocationListener {
     @Override
     public void onLocationChanged(@NonNull Location location) {
         myRef = database.getReference(shopId + "/carts/" + cartId + "/Longitude");
-        double longi = location.getLongitude();
+        double longi_data = location.getLongitude();
 
-        myRef.setValue(String.format("%.4f",longi));
+        myRef.setValue(longi_data);
+        //myRef.setValue(String.format("%.6f",longi_data));
 
         myRef = database.getReference(shopId + "/carts/" + cartId + "/Latitude");
         double lat = location.getLatitude();
 
-        myRef.setValue(String.format("%.4f",lat));
+        myRef.setValue(lat);
+        //myRef.setValue(String.format("%.6f",lat));
 
 
         Log.d("latitude", String.valueOf(location.getLatitude()));
